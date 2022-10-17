@@ -1,98 +1,58 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
 
 <head>
   <meta charset="utf-8">
-  <title>🌟Bill Lee's Personal Site</title>
+  <title>Bill Lee</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="favicon.ico">
 </head>
 
 <body>
-  <table cellspacing="20">
-    <tr>
-      <td>
-        <img src="images/thunderhead.png" alt="no alternate picture" width="125" height="150">
-      </td>
-      <td>
-        <h1>Bill Lee</h1>
-        <p><em>Some <strong>Retired</strong> Flunky.</em></p>
-        <p>I am retired, but love to learn new things and keep my skills sharp!</p>
-      </td>
-    </tr>
-  </table>
-  <hr>
-  <h3>Education:</h3>
-  <ul>
-    <li>Associated Degree - General Education - Florissant Valley Community College</li>
-    <li>Bachelors Degree - Meteorology - St. Louis University</li>
-  </ul>
-  <hr>
-  <h3>Hobblies:</h3>
-  <ol>
-    <li><a href="https://www.weather.gov/lsx/">Meteorology</a></li>
-    <li>Gardening</li>
-    <li>Computers</li>
-  </ol>
-  <hr>
-  <h3>Reference Material:</h3>
-  <ul>
-    <li><a href="images/Ferguson-Florissant District Calendar.pdf">Ferguson-Florissant School District Calendar</a></li>
-    <li><a href="images/Hazelwood District Calendar.pdf">Hazelwood School District Calendar</a></li>
-  </ul>
-  </ol>
-  <hr>
-  <h3>Work Experience:</h3>
-  <table border=1>
-    <thead>
-      <tr>
-        <th>Dates</th>
-        <th>Work</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>2013-2019</td>
-        <td>Principle Network Design Engineer</td>
-      </tr>
-      <tr>
-        <td>2009-2013</td>
-        <td>Production Support/SQM Lead</td>
-      </tr>
-    </tbody>
-    <tfoot>
-    </tfoot>
-  </table>
-  <hr>
-  <h3>Skills:</h3>
-  <table cellspacing="1">
-    <td>
-      <table cellspacing="1">
-        <tr>
-          <td>Java</td><td>٭٭٭٭</td>
-        </tr>
-        <tr>
-          <td>C++</td><td>٭٭٭</td>
-        </tr>
-        <tr>
-          <td>SQL</td><td>٭٭٭٭</td>
-        </tr>
-      </table>
-    </td>
-    <td>
-      <table cellspacing="1">
-        <tr>
-          <td>UNIX Shell</td><td>٭٭٭٭٭٭</td>
-        </tr>
-        <tr>
-          <td>Fortran</td><td>٭٭</td>
-        </tr>
-        <tr>
-          <td>COBOL</td><td>٭٭</td>
-        </tr>
-      </table>
-    </td>
-  </table>
-  <hr>
-  <a href="contactinfo.html">Contact Info</a>
+  <div class="top-container">
+      <img class="top-cloud" src="images/cloud.png" alt="cloud-img">
+      <h1>I'm Bill!</h1>
+      <h2>A jack of all trades and a hard worker.</h2>
+      <img class="bottom-cloud" src="images/cloud.png" alt="cloud-img">
+      <img src="images/mountain.png" alt="mountain-img">
+  </div>
+  <div class="middle-container">
+    <div class="profile">
+      <img src="images/Bill Lee.jpg" alt="Bill Lee" height="160px" width="120px">
+      <h2>Hello.</h2>
+      <p class="profile-row">I have done coding in FORTRAN, COBOL, C, C++ and Java over my lifetime.  I've worked with Orace, MS-SQL and MySQL databases.  I've everwritten some BOT's in Automation Anywhere and called Rest API's with Python and PHP.  I love UNIX/Linux shell scripting.  I ❤ learning new things.</p>
+    </div>
+    <hr>
+    <div class="skills">
+      <h2>My Skills.</h2>
+      <div class="skill-row">
+        <img class="code-img" src="images/skills.jpeg" alt="code-img">
+        <h3>Way Back When...</h3>
+        <p class="code-skill-description">I started playing with PC's and operating system installations in the 90's.  Over time I went from legacy apps on mainframes, to midrange UNIX/AIX/Linux system apps and play with Linux at home.</p>
+      </div>
+      <div class="skill-row">
+        <img class="oth-img" src="images/tornado.jpeg" alt="oth-img">
+        <h3>The Weather Rocks!</h3>
+        <p class ="oth-skill-description">Also in my spare time I love following the weather.  This stems from my lifetime interest and having a Meteorology degree.  I even have a published paper from a study of the Red River Tornado outbreak.</p>
+      </div>
+    </div>
+    <hr>
+    <div class="contact-me">
+      <h2>Get In Touch</h2>
+      <h3>If you love weather, coding or tinkering with PC's feel free to contact me.</h3>
+      <p class="contact-row">We could study NWS API's and expore ways to call them!</p>
+      <a class="btn" href="mailto:igcu2.bl@gmail.com">CONTACT ME</a>
+    </div>
+  </div>
+
+
+  <div class="bottom-container">
+    <a class="footer-link" href="https://www.linkedin.com/">LinkedIn</a>
+    <a class="footer-link" href="https://Indeed.com/">Indeed</a>
+    <a class="footer-link" href="https://www.appbrewery.co/">Website</a>
+    <p class="copyright">© 2022 Bill Lee.</p>
+  </div>
+
 </body>
 
 </html>
