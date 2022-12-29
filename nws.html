@@ -1,0 +1,67 @@
+<html>
+<head>
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+ <table class="table table-bordered">
+   <tbody id="data">
+   </tbody>
+</table>   
+
+<script>
+
+  getData();
+
+  async function getData(){
+       const response= await fetch('https://api.weather.gov/gridpoints/LSX/91,80/forecast');
+       //const response= await fetch('https://api.weather.gov/gridpoints/TOP/31,80/forecast');
+       console.log(response);
+       if (response.ok) { // if HTTP-status is 200-299
+            // get the response body (the method explained below)
+            const data=await response.json();
+            console.log(data);
+            nlength=data.properties.periods.length;
+            console.log(data);
+            var temp="<table>";
+            temp+="<tr><td><strong><p style=\"color:red\">Forecast for Florissant, MO<p></strong></td><td>date</td><td>period</td><td>forecast</td><td>low/high</td><td>wind</td><td>detailed forecast</td></tr>";
+            for(i=0;i<nlength;i++)
+            {
+               if((data.properties.periods[i].name).includes("ight"))
+               {
+                   tprefix="Low";
+               }
+               else
+               {
+                   tprefix="High";
+               }
+               temp+="<tr>";
+               temp+="<td><img src=\""+data.properties.periods[i].icon+"\"></td>";
+               temp+="<td><nobr>"+data.properties.periods[i].startTime.substring(5,10)+"</nobr></td>";
+               temp+="<td><nobr>"+data.properties.periods[i].name+"</nobr></td>";
+               temp+="<td><nobr>"+data.properties.periods[i].shortForecast+"</nobr></td>";
+               temp+="<td><nobr>"+tprefix+"&nbsp"+data.properties.periods[i].temperature+"</nobr></td>";
+               temp+="<td><nobr>"+data.properties.periods[i].windDirection;
+               temp+="&nbsp"+data.properties.periods[i].windSpeed+"</nobr></td>";
+               temp+="<td>"+data.properties.periods[i].detailedForecast+"</td>";
+               temp+="</tr>";
+            }
+            temp+="</table>";
+            document.getElementById("data").innerHTML=temp;
+        } else {
+            const data=await response.json();
+            console.log(data);
+            temp+="HTTP-Error: " + response.status + "<br>";
+            temp+="title: " + data.title + "<br>";
+            temp+="type: " + data.type+ "<br>";
+            temp+="detail: " + data.detail+ "<br>";
+            document.getElementById("data").innerHTML=temp;
+        }
+     }
+
+</script>
+</body>
+</html>
